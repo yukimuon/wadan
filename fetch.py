@@ -8,6 +8,7 @@ import json
 import csv
 from datetime import date
 
+# This function reads the key in file apikey and parse it, create a listener and filter on the topic of electrical brands and apple, store their data seperately
 def init():
     f = open("apikey", "r")
     f.readline()
@@ -52,4 +53,5 @@ while True:
     try:
         stat=init()
     except:
+        # When network error or other exceptions, pause for 1 min
         time.sleep(60)
